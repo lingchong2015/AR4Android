@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.curry.stephen.lar"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.Camera"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Vuforia Key of LAR App -->
+        <!--ARSgyMr/////AAAAGWWzirySkkvamb/3INH6DktYwH9O+jECHulnywRyVMIGFvZRnfNUjpC2U3FYDdCKGAiNW/FK9RnQx/wRkUIxdPvwNhcAKJLVAE08Ku/MQTn+hB9e1kWGKvfwebSPxxGwl1GzV5K75FI7LcyuAO9JhJ20TenLsmDmccCoRbC73RjnzhZ8HFi6rMoskjPLMQ77D39+P2vSI/1T6s4A1pu+a0a77GRB0dG7zS+vSiv3xO2ZtrFdfckcEPDhtEwfhfvq/CDimqonKzJvOAlKjulc3bfOZidvtJ5pRHzp5hs/FHH4ugCfKsgCKNMfMTDjkh6Lb4SrnJCemHZ2Xa+HAHNragNgGgvR/ocH1hzdYg70QEEk-->
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
