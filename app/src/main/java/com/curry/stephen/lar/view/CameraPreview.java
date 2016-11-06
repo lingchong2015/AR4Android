@@ -1,4 +1,4 @@
-package com.curry.stephen.lar;
+package com.curry.stephen.lar.view;
 
 import android.content.Context;
 import android.hardware.Camera;

@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
     <!-- Run AR App in Fullscreen mode. -->
-    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -17,5 +17,21 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="FabStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:src">@drawable/refresh</item>
+        <item name="borderWidth">1dp</item><!-- FBA的边界,增加立体感. -->
+        <item name="elevation">@dimen/elevation</item><!-- 未被按下时FBA的阴影面积. -->
+        <item name="pressedTranslationZ">12dp</item><!-- 按下时FBA的阴影面积. -->
+        <item name="rippleColor">?attr/colorPrimaryDark</item><!-- ripple的颜色. -->
+    </style>
+
+    <style name="Theme.ToolBar.Base.Subtitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
 
 </resources>
