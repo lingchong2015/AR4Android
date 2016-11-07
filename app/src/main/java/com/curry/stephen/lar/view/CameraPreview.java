@@ -15,14 +15,16 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     private SurfaceHolder mSurfaceHolder;
     private Camera mCamera;
+    private Camera.PreviewCallback mPreviewCallback;
     private static final String TAG = CameraPreview.class.getSimpleName();
 
-    public CameraPreview(Context context, Camera camera) {
+    public CameraPreview(Context context, Camera camera, Camera.PreviewCallback previewCallback) {
         super(context);
         mCamera = camera;
         mSurfaceHolder = getHolder();
         mSurfaceHolder.addCallback(this);
         mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        mPreviewCallback = previewCallback;
     }
 
     @Override
@@ -36,6 +38,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             return;
         }
 
+        if (mCamera == null) {
+            return;
+        }
+
         try {
             mCamera.stopPreview();
         } catch (Exception ex) {
@@ -44,6 +50,9 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         }
 
         try {
+            if (mPreviewCallback != null) {
+                mCamera.setPreviewCallback(mPreviewCallback);
+            }
             mCamera.setPreviewDisplay(mSurfaceHolder);
             mCamera.startPreview();
         } catch (IOException ex) {
@@ -54,9 +63,11 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-        if (mCamera != null) {
-            mCamera.release();
-            mCamera = null;
-        }
+//        if (mCamera != null) {
+//            mCamera.setPreviewCallback(null);
+//            mCamera.stopPreview();
+//            mCamera.release();
+//            mCamera = null;
+//        }
     }
 }

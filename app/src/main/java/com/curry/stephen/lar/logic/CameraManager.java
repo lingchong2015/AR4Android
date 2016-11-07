@@ -8,12 +8,11 @@ import android.os.AsyncTask;
 import android.view.SurfaceView;
 import android.widget.Toast;
 
-import com.curry.stephen.lar.activity.MainActivity;
 import com.curry.stephen.lar.view.CameraPreview;
 
 import java.util.List;
 
-import static com.curry.stephen.lar.global.constants.DESIRED_CAMERA_PREVIEW_WIDTH;
+import static com.curry.stephen.lar.global.Constants.DESIRED_CAMERA_PREVIEW_WIDTH;
 
 /**
  * Created by lingchong on 16/11/7.
@@ -60,7 +59,7 @@ public class CameraManager {
             } else {
                 mCamera = camera;
                 initCameraParameters();
-                mSurfaceView = new CameraPreview(mContext, mCamera);
+                mSurfaceView = new CameraPreview(mContext, mCamera, null);
                 ((Activity)mContext).setContentView(mSurfaceView);
             }
         }
